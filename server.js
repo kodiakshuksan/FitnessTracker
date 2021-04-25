@@ -1,7 +1,12 @@
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-//const db = require("../models");
+const router = require("express").Router();
+const routesA = require("./routes/api-routes.js");
+const routesB = require("./routes/html-routes.js");
+const db = require("./models");
+//const routesA = require("./routes/api-routes");
+//console.log(routesA)
 
 
 
@@ -19,9 +24,8 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-
-//require("./routes/api-routes.js")(app);
-//require("./routes/html-routes.js")(app);
+app.use(routesA);
+app.use(routesB);
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);

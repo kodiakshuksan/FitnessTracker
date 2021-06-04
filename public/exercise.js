@@ -86,11 +86,11 @@ function validateInputs() {
   }
 
   if (isValid) {
-    completeButton.removeAttribute("disabled");
-    addButton.removeAttribute("disabled");
+    //completeButton.removeAttribute("disabled");
+    //addButton.removeAttribute("disabled");
   } else {
-    completeButton.setAttribute("disabled", true);
-    addButton.setAttribute("disabled", true);
+   // completeButton.setAttribute("disabled", true);
+    //addButton.setAttribute("disabled", true);
   }
 }
 

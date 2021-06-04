@@ -6,8 +6,8 @@ fetch("/api/workouts/range")
   })
   .then(data => {
     populateChart(data);
-  });
 
+  });
 
 API.getWorkoutsInRange()
 
@@ -221,3 +221,4 @@ function workoutNames(data) {
   
   return workouts;
 }
+  

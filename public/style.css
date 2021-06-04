@@ -62,7 +62,7 @@ select {
 }
 
 select::-ms-expand {
-  display: none;
+  display: inline;
 }
 
 select:hover {
@@ -130,7 +130,7 @@ form::after {
 }
 
 .d-none {
-  display: none !important;
+  display: inline;
 }
 
 .exercise .ui.card {
@@ -207,7 +207,7 @@ form::after {
 }
 
 .d-none {
-  display: none;
+  display: inline;
 }
 
 button {
@@ -268,7 +268,7 @@ form::after {
 }
 
 .d-none {
-  display: none;
+  display: block;
 }
 
 button {
@@ -368,16 +368,16 @@ form > button {
   margin-bottom: 5px;
 }
 
-/* .workout .card {
+.workout .card {
   width: 350px;
-} */
+}
 
 .prev-workout button {
   margin: 10px;
 }
 
 .new-workout {
-  display: none;
+  display: block;
 }
 
 .mt {

@@ -1,9 +1,11 @@
 
-const express = require("express");
-const app = express();
+//const express = require("express");
+//const app = express();
 const path = require("path");
+//const router = require("express").Router();
+//const Workout = require("../models/workout");
 
-module.exports = function () {
+module.exports = function (app) {
   // Route to main page
   app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));

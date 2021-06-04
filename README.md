@@ -23,7 +23,7 @@
 
 ## Usage-
 
-![picture of website homepage](/public/assets/images/homepage.png)
+![picture of website homepage](./public/assets/images/homepage.png)
 
 ## Technologies Used-
 

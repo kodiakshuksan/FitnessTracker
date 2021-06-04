@@ -1,43 +1,30 @@
 const express = require("express");
-const logger = require("morgan");
 const mongoose = require("mongoose");
-//const router = require("express").Router();
-const routesA = require("./routes/api-routes.js");
-const routesB = require("./routes/html-routes.js");
-const db = require("./models");
-//const routesA = require("./routes/api-routes");
-//console.log(routesA)
+const logger = require("morgan");
 
-
-
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 
 const app = express();
 
 app.use(logger("dev"));
 
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static("public"));
+app.use(express.static('public'));
+//app.use(express.static('files'));
 
-mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/workout',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  }
-);
-
-app.use(routesA);
-app.use(routesB);
-
-app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+  useNewUrlParser: true,
+  useFindAndModify: false
 });
 
 
-
+// Routes
+require("./routes/html.js")(app);
+require("./routes/api.js")(app);
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}!`);
+});

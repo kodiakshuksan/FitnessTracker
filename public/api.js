@@ -43,9 +43,12 @@ const API = {
 //gets all stats?
   async getWorkoutsInRange(data) {
     const res = await fetch(`/api/workouts/range`);
+    console.log(res)
+    console.log(data)
+    console.log(this.getWorkoutsInRange)
     const json = await res.json();
-console.log(getWorkoutsInRange)
-console.log(data)
+
+
     return json;
   },
 };

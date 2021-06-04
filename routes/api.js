@@ -19,12 +19,12 @@ module.exports = function (app) {
         res.json(err);
       });
   })
-  
+
   app.get("/api/workouts/range", (req, res) => {
     Workout.find({}).sort({"day": 1}).limit(1)
       .then(dbWorkout => {
-        console.log(dbWorkout[0].id)
-        console.log(mongojs.ObjectId(dbWorkout[0].id))
+        //console.log(dbWorkout[0].id)
+        //console.log(mongojs.ObjectId(dbWorkout[0].id))
         res.json(dbWorkout);
       })
       .catch(err => {

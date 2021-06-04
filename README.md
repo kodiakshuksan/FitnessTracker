@@ -23,7 +23,8 @@
 
 ## Usage-
 
-![picture of website homepage](./public/assets/images/homepage.png)
+![picture of website homepage](./fitnessHomepage.png)
+![picture of add exercise page](./addExercise.png)
 
 ## Technologies Used-
 

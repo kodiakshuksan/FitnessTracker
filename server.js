@@ -21,14 +21,14 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useFindAndModify: false
 });
 
-
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, '../public/index.html'));
+// });
 // Routes
 require("./routes/html.js")(app);
 require("./routes/api.js")(app);
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
-});
+
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);

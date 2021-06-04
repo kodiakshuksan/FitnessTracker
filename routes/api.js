@@ -6,6 +6,7 @@ const mongojs = require("mongojs");
 
 
 module.exports = function (app) {
+
   // Get last workout
   app.get("/api/workouts", (req, res) => {
     Workout.find({}).sort({"day": 1}).limit(1)
@@ -18,6 +19,19 @@ module.exports = function (app) {
         res.json(err);
       });
   })
+  
+  app.get("/api/workouts/range", (req, res) => {
+    Workout.find({}).sort({"day": 1}).limit(1)
+      .then(dbWorkout => {
+        console.log(dbWorkout[0].id)
+        console.log(mongojs.ObjectId(dbWorkout[0].id))
+        res.json(dbWorkout);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  })
+
 
   // Add an exercise (Id is not matching)
   app.put("/api/workouts/:id", ({body, params}, res) => {
@@ -50,4 +64,4 @@ module.exports = function (app) {
         res.json(err);
       });
   });
-};
+}

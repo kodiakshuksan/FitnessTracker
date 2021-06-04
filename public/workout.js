@@ -1,19 +1,27 @@
-async function initWorkout() {
-  const lastWorkout = await API.getLastWorkout();
-  console.log("Last workout:", lastWorkout);
-  if (lastWorkout) {
-    document
-      .querySelector("a[href='exercise?']");
-      setAttribute("href", `exercise?id=${lastWorkout._id}`);
 
-    const workoutSummary = {
+
+async function initWorkout(renderWorkoutSummary) {
+
+  const lastWorkout = await API.getLastWorkout();
+  //console.log("Last workout:", lastWorkout);
+  //console.log(lastWorkout)
+  //console.log("a[href='exercise?']").setAttribute("href", `exercise?id=${lastWorkout._id}`)
+ 
+  if (lastWorkout) {
+    //console.log(lastWorkout)
+    document.querySelector("a[href='/exercise?']").
+    setAttribute("href", "/exercise?id=" + lastWorkout._id);
+
+
+      const workoutSummary = {
       date: formatDate(lastWorkout.day),
       totalDuration: lastWorkout.totalDuration,
       numExercises: lastWorkout.exercises.length,
       ...tallyExercises(lastWorkout.exercises)
     };
+    console.log(workoutSummary)
+      renderWorkoutSummary(workoutSummary);
 
-    renderWorkoutSummary(workoutSummary);
   } else {
     renderNoWorkoutText()
   }
@@ -45,7 +53,7 @@ function formatDate(date) {
 }
 
 function renderWorkoutSummary(summary) {
-  const container = document.querySelector(".workout-stats");
+  const container = document.querySelector(".prev-workout");
 
   const workoutKeyMap = {
     date: "Date",

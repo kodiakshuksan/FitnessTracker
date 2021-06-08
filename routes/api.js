@@ -1,6 +1,6 @@
 const router = require("express").Router();
-//const Workout = require("../models/workout");
 const Workout = require("../models/workout");
+
 const mongojs = require("mongojs");
 
 
@@ -38,7 +38,7 @@ module.exports = function (app) {
     const workout = new Workout(body)
     workout.setTotalDuration();
 
-    Workout.update(
+    Workout.updateMany(
       { _id: params.id },
       { $push: { exercises: body }}
     )

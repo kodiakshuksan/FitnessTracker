@@ -1,0 +1,29 @@
+{
+  "name": "fitnesstracker",
+  "version": "1.0.0",
+  "description": "## Jennifer Detmering",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kodiakshuksan/FitnessTracker.git"
+  },
+  "author": "Jenny Detmering",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kodiakshuksan/FitnessTracker/issues"
+  },
+  "homepage": "https://github.com/kodiakshuksan/FitnessTracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongo": "^0.1.0",
+    "mongodb": "^3.6.9",
+    "mongojs": "^3.1.0",
+    "mongoose": "^5.12.13",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
+  }
+}

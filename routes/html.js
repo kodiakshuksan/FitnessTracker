@@ -2,8 +2,8 @@
 //const express = require("express");
 //const app = express();
 const path = require("path");
-//const router = require("express").Router();
-//const Workout = require("../models/workout");
+const router = require("express").Router();
+const Workout = require("../models/workout");
 
 module.exports = function (app) {
   // Route to main page
